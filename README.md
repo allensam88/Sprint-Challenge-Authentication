@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+A ‘session’ is used to store information about a client that can be used later so that a user doesn’t need to keep logging in over and over to access different parts of the App.  Depending on a user authorization privileges, they can enter certain places, but perhaps not others.  Session storage can also store many other things beside a password, which can be accessed later if necessary.
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+The module import, bcryptjs, is used to hash a password into a long, scrambled list of characters that no longer resemble the original password, which is makes it more difficult to understand what the password and avoids using plain text.
 
 - [ ] What does bcrypt do to slow down attackers?
 
+In order to protect a password, bcrypt will hash the password by salting it and then running the algorithm many times.  Salting is just a way to add extra characters and complex to the original password.  Then adding more algorithm iterations makes it even more complex.  It’s like taking a box of Christmas lights, throwing in extra light bulbs, then shaking up the box several different times.  In the end, they will come out of the box all tangled and twisted together and make no sense.
+
 - [ ] What are the three parts of the JSON Web Token?
+
+A JSON web token will have three parts: 1) header, 2) payload, and 3) signature.  The header specifies which type of algorithm and token type is being used to generate the token.  The payload is just whatever object is being stored on the token, such as the id, username, role, etc.  It’s good to limit this to a small amount of information to help speed up performance.  The signature is the piece that is secret and authenticates that yes, the token is bona fide genuine.  These three pieces of information are put together in one token and separated by a dot period. 
 
 ## Minimum Viable Product
 
